@@ -1,4 +1,3 @@
-
 type ValueType = string | number | boolean;
 const formatValue = (value: ValueType): ValueType | undefined => {
   if (typeof value === "string") {
@@ -10,7 +9,6 @@ const formatValue = (value: ValueType): ValueType | undefined => {
   }
 };
 
-
 const getLength = <T>(input: string | T[]): number => {
   if (typeof input === "string") {
     return input.length;
@@ -20,7 +18,6 @@ const getLength = <T>(input: string | T[]): number => {
     return 0;
   }
 };
-
 
 class Person {
   private name: string;
@@ -32,10 +29,9 @@ class Person {
   }
 
   public getDetails(): string {
-    return `Name: ${this.name}, Age: ${this.age}`;
+    return `'Name: ${this.name}, Age: ${this.age}'`;
   }
 }
-
 
 interface Item {
   title: string;
@@ -44,7 +40,6 @@ interface Item {
 const filterByRating = (items: Item[]): Item[] => {
   return items.filter((item) => item.rating >= 4);
 };
-
 
 interface User {
   id: number;
@@ -55,7 +50,6 @@ interface User {
 const filterActiveUsers = (users: User[]): User[] => {
   return users.filter((user) => user.isActive);
 };
-
 
 interface Book {
   title: string;
@@ -72,7 +66,6 @@ const printBookDetails = (book: Book): void => {
   );
 };
 
-
 const getUniqueValues = <T>(array1: T[], array2: T[]): T[] => {
   const newArray: T[] = [];
   array1.forEach((item) => {
@@ -87,7 +80,6 @@ const getUniqueValues = <T>(array1: T[], array2: T[]): T[] => {
   });
   return newArray;
 };
-
 
 interface Product {
   name: string;
