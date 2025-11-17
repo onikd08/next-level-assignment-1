@@ -38,7 +38,12 @@ interface Item {
   rating: number;
 }
 const filterByRating = (items: Item[]): Item[] => {
-  return items.filter((item) => item.rating >= 4);
+  return items.filter((item) => {
+    if (item.rating < 0 || item.rating > 5) {
+      throw new Error("Rating must be between 0 and 5");
+    }
+    return item.rating >= 4;
+  });
 };
 
 interface User {
@@ -67,17 +72,31 @@ const printBookDetails = (book: Book): void => {
 };
 
 const getUniqueValues = <T>(array1: T[], array2: T[]): T[] => {
+  const doesExist = (arr: T[], val: T): boolean => {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === val) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   const newArray: T[] = [];
-  array1.forEach((item) => {
-    if (!newArray.includes(item)) {
-      newArray.push(item);
+  let index = 0;
+
+  for (let i = 0; i < array1.length; i++) {
+    if (!doesExist(newArray, array1[i])) {
+      newArray[index] = array1[i];
+      index++;
     }
-  });
-  array2.forEach((item) => {
-    if (!newArray.includes(item)) {
-      newArray.push(item);
+  }
+  for (let i = 0; i < array2.length; i++) {
+    if (!doesExist(newArray, array2[i])) {
+      newArray[index] = array2[i];
+      index++;
     }
-  });
+  }
+
   return newArray;
 };
 
