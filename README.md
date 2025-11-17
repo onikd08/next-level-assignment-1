@@ -7,11 +7,10 @@ Answer:  ইন্টারফেস কেবল অবজেক্ট এর 
 Answer 2: keyof টাইপ অথবা ইন্টারফেস এর key গুলো কে নিয়ে union এর মাধ্যমে string literel টাইপ এ পরিণত করে
 
 ```bash
-type User = {
+interface User = {
   id: number;
   name: string;
   active: boolean;
 };
-
-keyof User -> "id" | "name" | "active"
+type UserKeys = keyof User // -> "id" | "name" | "active"
 ```
