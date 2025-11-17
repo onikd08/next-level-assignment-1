@@ -1,4 +1,3 @@
-// Solution of problem 1:
 
 type ValueType = string | number | boolean;
 const formatValue = (value: ValueType): ValueType | undefined => {
@@ -11,7 +10,6 @@ const formatValue = (value: ValueType): ValueType | undefined => {
   }
 };
 
-// Solution of problem 2:
 
 const getLength = <T>(input: string | T[]): number => {
   if (typeof input === "string") {
@@ -23,7 +21,6 @@ const getLength = <T>(input: string | T[]): number => {
   }
 };
 
-// Solution of problem 3:
 
 class Person {
   private name: string;
@@ -39,7 +36,6 @@ class Person {
   }
 }
 
-// Solution of problem 4:
 
 interface Item {
   title: string;
@@ -49,7 +45,6 @@ const filterByRating = (items: Item[]): Item[] => {
   return items.filter((item) => item.rating >= 4);
 };
 
-// Solution of problem 5:
 
 interface User {
   id: number;
@@ -61,7 +56,6 @@ const filterActiveUsers = (users: User[]): User[] => {
   return users.filter((user) => user.isActive);
 };
 
-// Solution of problem 6.
 
 interface Book {
   title: string;
@@ -78,7 +72,6 @@ const printBookDetails = (book: Book): void => {
   );
 };
 
-// Solution of problem 7
 
 const getUniqueValues = <T>(array1: T[], array2: T[]): T[] => {
   const newArray: T[] = [];
@@ -95,7 +88,6 @@ const getUniqueValues = <T>(array1: T[], array2: T[]): T[] => {
   return newArray;
 };
 
-// Solution of problem 8
 
 interface Product {
   name: string;
